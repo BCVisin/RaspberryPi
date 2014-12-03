@@ -11,7 +11,3 @@ DELAY="10"
 
 # Start slide show
 /usr/bin/qiv --shuffle --fullscreen --delay $DELAY --autorotate --scale_down --maxpect --readonly --slide --no_statusbar --disable_grab --file $IMGFNAME &
-
-/usr/bin/qiv --shuffle --fullscreen --delay $DELAY --autorotate --scale_down --maxpect --readonly --slide --statusbar --disable_grab --file $IMGFNAME
-
-feh --filelist $IMGFNAME
