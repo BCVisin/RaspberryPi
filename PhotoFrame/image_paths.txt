@@ -1,0 +1,6 @@
+#!/bin/sh
+#create image_path file in random access order
+
+FILENAME = 
+
+find /media/networkshare/photos/Eye-Fi -iregex ".*\.\(jpg\|gif\|png\|jpeg\)" | sed 's/^/"/;s/$/"/' | sort -r > 
