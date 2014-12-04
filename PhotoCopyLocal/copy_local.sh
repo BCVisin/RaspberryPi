@@ -15,6 +15,8 @@ do
 
   find "$PHOTO_DIR_LOCATON" -iregex ".*\.\(jpg\|gif\|png\|jpeg\)" | sort --random-sort | head -$(($SECONDS_IN_A_DAY/$SECONDS_NEXT_PHOTO)) | while read photo
   do
+    #copy the new file
+    cp "$photo" "$DIR_LOCATION/$IMG_FILE_NAME"
 
     #run feh on the local file
     $DIR_LOCATION/run_feh.sh "$DIR_LOCATION/$IMG_FILE_NAME" &
@@ -26,14 +28,11 @@ do
     else
       IMG_FILE_NAME='LOCAL.JPG'
     fi
+    sleep 1
     #remove the old file which will kill feh
     rm "$DIR_LOCATION/$IMG_FILE_NAME"
-    #give feh a second to try and reload the image to realize it's gone    
-    sleep 1
-    #copy the new file
-    cp "$photo" "$DIR_LOCATION/$IMG_FILE_NAME" &
     #sleep 10 seconds
-    sleep 10
+    sleep $((SECONDS_NEXT_PHOTO-1))
   done
 
 done
