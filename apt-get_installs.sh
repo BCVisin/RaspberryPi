@@ -2,6 +2,9 @@
 
 sudo apt-get install feh
 
+#to get exifgrep install exifprobe
+sudo apt-get install exifprobe
+
 sudo apt-get install qiv
 
 #screen saver that may be able to do what I want to do but better...need to try it on the pi
